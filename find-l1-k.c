@@ -19,6 +19,9 @@ static int __init start(void){
 
 	//This is the large array that will be used to estimate the cache  hit and miss.
 	//Assuming the largest cache tested will not exceed n integers' size.
+	uint64_t N = 100000;
+	uint16_t islands = 5;
+	uint64_t dist = 8192;
 	uint64_t n = 32;
 	uint64_t  *array;
         int *latency;
@@ -26,16 +29,20 @@ static int __init start(void){
 
         printk(KERN_INFO "Creating test array\n");
 
-        array = kmalloc(n*sizeof(uint64_t),GFP_KERNEL);	
-        latency = kmalloc(n*sizeof(int),GFP_KERNEL); // Data type is int because it can be negative.
-        types = kmalloc(n*sizeof(char),GFP_KERNEL);
+        array = kmalloc(N*sizeof(uint64_t),GFP_KERNEL);	
+        latency = kmalloc(N*sizeof(int),GFP_KERNEL); // Data type is int because it can be negative.
+        types = kmalloc(N*sizeof(char),GFP_KERNEL);
 
-        uint64_t amem = array;
-        uint64_t rem = amem >> 5;
-	printk(KERN_INFO "Array pointer size : %x",array);	 
-	printk(KERN_INFO "Remainder from 32B : %x", rem);
+        //uint64_t amem = array;
+        //uint64_t rem = amem >> 5;
+	//printk(KERN_INFO "Array pointer size : %x",array);	 
+	//printk(KERN_INFO "Remainder from 32B : %x", rem);
+	
+	//Fire the instruction for  clearing the caches.
+        asm volatile ( "WBINVD\n\t"); 
+	
 	int i = 0;
-	for(;i<n;i++)
+	for(;i<N;i++)
 		array[i] = i;
 
       
@@ -58,81 +65,86 @@ static int __init start(void){
 
        	
         
-	for(i=0;i<n;i++){
-
-		preempt_disable();
-		raw_local_irq_save(flags);
-	
+	for(i=0;i<islands;i++){
+		int j=0;
+		for(;j<n;j++){
+			uint16_t index = i*dist+j;
+			preempt_disable();
+			raw_local_irq_save(flags);
 		
-		asm volatile (
-				"CPUID\n\t"
-				"RDTSC\n\t"
-				"mov %%edx, %0\n\t"
-				"mov %%eax, %1\n\t": "=r" (high0), "=r" (low0):: "%rax","%rbx","%rcx","%rdx"
-				);
+		    	
+			asm volatile (
+					"CPUID\n\t"
+					"RDTSC\n\t"
+					"mov %%edx, %0\n\t"
+					"mov %%eax, %1\n\t": "=r" (high0), "=r" (low0):: "%rax","%rbx","%rcx","%rdx"
+					);
 
-		//code whose latency we have to measure.
-		//if(array[i] < 0) 
+			//code whose latency we have to measure.
+			//if(array[i] < 0) 
+				
+			//	array[i] = -array[i] ;
 			
-			//Just some code which will never be executed. My intension is to just read the data and execute a compare instruction. I am doing a simple thing like a = array[i], becasue due to the compiler, this code may completely be removed and not be executed.
-		//	array[i] = -array[i] ;
+			//The volatile keyword is for not doing optimizations with this instruction.
 		
-                //The volatile keyword is for not doing optimizations with this instruction.
-		volatile int a = array[i];
+			volatile uint64_t a = array[index];
 
-		//Find the maximum and the minimum latencies.
-                
+			
 
-		asm volatile (
-				"RDTSCP\n\t"
-				"mov %%edx, %0\n\t"
-				"mov %%eax, %1\n\t" "CPUID\n\t": "=r" (high1), "=r" (low1):: "%rax","%rbx","%rcx","%rdx");
-		start = ( ((uint64_t)high0 << 32) | low0 );
-		end = ( ((uint64_t)high1 << 32) | low1 );
+			asm volatile (
+					"RDTSCP\n\t"
+					"mov %%edx, %0\n\t"
+					"mov %%eax, %1\n\t" "CPUID\n\t": "=r" (high1), "=r" (low1):: "%rax","%rbx","%rcx","%rdx");
+			start = ( ((uint64_t)high0 << 32) | low0 );
+			end = ( ((uint64_t)high1 << 32) | low1 );
 
-		raw_local_irq_restore(flags);
-		preempt_enable();
+			raw_local_irq_restore(flags);
+			preempt_enable();
 
-		int elapsed =  end - start - overhead;
+			int elapsed =  end - start - overhead;
 
-		latency[i] = elapsed;
+			latency[index] = elapsed;
 
-		printk(KERN_INFO "%d",elapsed);
+			printk(KERN_INFO "%d",elapsed);
 
-                types[i] = elapsed > HIT_LATENCY_BOUND ? 'H' : 'M'; 
+			types[index] = elapsed > HIT_LATENCY_BOUND ? 'H' : 'M'; 
+		}
+       
+	       /*	
+		char type = 'M';
+		uint32_t running_count = 0;
+		for( j=0;j<n;j++){
+			char prev_type = type;
+			if(latency[i*1024+j] < HIT_LATENCY_BOUND){
+			    type = 'H';
+			    if(prev_type != type){
+				    printk(KERN_INFO "%uM ",running_count);
+				    running_count = 1;
+			    }
+			    else running_count++;
+			}
+			else{
+			    type = 'M';	   
+			    if(prev_type != type){
+				    printk(KERN_INFO "%uH ",running_count);
+				    running_count = 1;
+			    }
+			    else running_count++;
+	 
+			}
 
+
+		 }
+
+       		 printk(KERN_INFO "%u%c",running_count,type);	
+
+                */
+
+		printk(KERN_INFO "Island completed");
 
 	}
         
-	char type = 'M';
-	uint32_t running_count = 0;
-	for( i=0;i<n;i++){
-		char prev_type = type;
-	        if(latency[i] < HIT_LATENCY_BOUND){
-                    type = 'H';
-		    if(prev_type != type){
-			    printk(KERN_INFO "%uM ",running_count);
-			    running_count = 1;
-		    }
-		    else running_count++;
-		}
-	        else{
-		    type = 'M';	   
-		    if(prev_type != type){
-			    printk(KERN_INFO "%uH ",running_count);
-			    running_count = 1;
-		    }
-		    else running_count++;
- 
-		}
-
-
-	}
-
-        printk(KERN_INFO "%u%c",running_count,type);	
-
-
-	//Free all memory
+		//Free all memory
 	kfree(array);
         kfree(latency);
 	kfree(types);
