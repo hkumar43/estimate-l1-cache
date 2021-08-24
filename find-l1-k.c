@@ -27,7 +27,7 @@ static int __init start(void){
         int *latency;
 	char *types; //Will be storing for H for Hit and M for Miss.
 
-        printk(KERN_INFO "Creating test array\n");
+        //printk(KERN_INFO "Creating test array\n");
 
         array = kmalloc(N*sizeof(uint64_t),GFP_KERNEL);	
         latency = kmalloc(N*sizeof(int),GFP_KERNEL); // Data type is int because it can be negative.
@@ -35,7 +35,7 @@ static int __init start(void){
 
         //uint64_t amem = array;
         //uint64_t rem = amem >> 5;
-	//printk(KERN_INFO "Array pointer size : %x",array);	 
+	//printk(KERN_INFO "Array pointer start location : %x",array);	 
 	//printk(KERN_INFO "Remainder from 32B : %x", rem);
 	
 	//Fire the instruction for  clearing the caches.
@@ -44,7 +44,38 @@ static int __init start(void){
 	int i = 0;
 	for(;i<N;i++)
 		array[i] = i;
+        
+	printk(KERN_INFO "GRAPH_DATA_STARTS");
 
+	//Getting the instruction cache with the required instructions
+        asm volatile (
+				"CPUID\n\t"
+				"RDTSC\n\t"
+				"mov %%edx, %0\n\t"
+				"mov %%eax, %1\n\t": "=r" (high0), "=r" (low0):: "%rax","%rbx","%rcx","%rdx"
+				);
+
+	asm volatile (
+				"RDTSCP\n\t"
+				"mov %%edx, %0\n\t"
+				"mov %%eax, %1\n\t" "CPUID\n\t": "=r" (high1), "=r" (low1):: "%rax","%rbx","%rcx","%rdx");
+	start = ( ((uint64_t)high0 << 32) | low0 );
+	end = ( ((uint64_t)high1 << 32) | low1 );
+
+	asm volatile (
+				"CPUID\n\t"
+				"RDTSC\n\t"
+				"mov %%edx, %0\n\t"
+				"mov %%eax, %1\n\t": "=r" (high0), "=r" (low0):: "%rax","%rbx","%rcx","%rdx"
+				);
+
+	asm volatile (
+				"RDTSCP\n\t"
+				"mov %%edx, %0\n\t"
+				"mov %%eax, %1\n\t" "CPUID\n\t": "=r" (high1), "=r" (low1):: "%rax","%rbx","%rcx","%rdx");
+	start = ( ((uint64_t)high0 << 32) | low0 );
+	end = ( ((uint64_t)high1 << 32) | low1 );
+        /******************************/
       
         //Find the overhead of other instructions
 	asm volatile (
@@ -64,7 +95,9 @@ static int __init start(void){
         int overhead = end - start;
 
        	
-        
+       
+        // Code for determining Block Size.
+	
 	for(i=0;i<islands;i++){
 		int j=0;
 		for(;j<n;j++){
@@ -80,7 +113,7 @@ static int __init start(void){
 					"mov %%eax, %1\n\t": "=r" (high0), "=r" (low0):: "%rax","%rbx","%rcx","%rdx"
 					);
 
-			//code whose latency we have to measure.
+			//codeddd whose latency we have to measure.
 			//if(array[i] < 0) 
 				
 			//	array[i] = -array[i] ;
@@ -105,11 +138,11 @@ static int __init start(void){
 
 			latency[index] = elapsed;
 
-			printk(KERN_INFO "%d",elapsed);
+			printk(KERN_INFO "GRAPH_DATA %d",elapsed);
 
 			types[index] = elapsed > HIT_LATENCY_BOUND ? 'H' : 'M'; 
 		}
-       
+
 	       /*	
 		char type = 'M';
 		uint32_t running_count = 0;
@@ -140,11 +173,93 @@ static int __init start(void){
 
                 */
 
-		printk(KERN_INFO "Island completed");
+		printk(KERN_INFO "ISLAND_COMPLETED");
 
 	}
+
+        printk(KERN_INFO "BLOCK_DATA_DONE");
+
+         //Fire the instruction for  clearing the caches.
+        asm volatile ( "WBINVD\n\t"); 
+	
+	//Do a large number of writes so that it also helps in clearing cache and also provides delay for WBINVD to clear the cache. 
+	for(;i<N;i++)
+		array[i] = 2*i;
+
+        //This code will result in the fetching of instructions in the instruction cache. So not overhead beacause of them.
+        asm volatile (
+				"CPUID\n\t"
+				"RDTSC\n\t"
+				"mov %%edx, %0\n\t"
+				"mov %%eax, %1\n\t": "=r" (high0), "=r" (low0):: "%rax","%rbx","%rcx","%rdx"
+				);
+
+	asm volatile (
+				"RDTSCP\n\t"
+				"mov %%edx, %0\n\t"
+				"mov %%eax, %1\n\t" "CPUID\n\t": "=r" (high1), "=r" (low1):: "%rax","%rbx","%rcx","%rdx");
+	start = ( ((uint64_t)high0 << 32) | low0 );
+	end = ( ((uint64_t)high1 << 32) | low1 );
+
+	asm volatile (
+
+				"CPUID\n\t"
+				"RDTSC\n\t"
+				"mov %%edx, %0\n\t"
+				"mov %%eax, %1\n\t": "=r" (high0), "=r" (low0):: "%rax","%rbx","%rcx","%rdx"
+				);
+
+	asm volatile (
+				"RDTSCP\n\t"
+				"mov %%edx, %0\n\t"
+				"mov %%eax, %1\n\t" "CPUID\n\t": "=r" (high1), "=r" (low1):: "%rax","%rbx","%rcx","%rdx");
+	start = ( ((uint64_t)high0 << 32) | low0 );
+	end = ( ((uint64_t)high1 << 32) | low1 );
+
+	/*******************************/
+
+
+	for(i=0;i<800;i++){
+                        preempt_disable();
+			raw_local_irq_save(flags);
+		
+		    	
+			asm volatile (
+					"CPUID\n\t"
+					"RDTSC\n\t"
+					"mov %%edx, %0\n\t"
+					"mov %%eax, %1\n\t": "=r" (high0), "=r" (low0):: "%rax","%rbx","%rcx","%rdx"
+					);
+
+			//code whose latency we have to measure.
+			//if(array[i] < 0) 
+				
+			//	array[i] = -array[i] ;
+			
+			//The volatile keyword is for not doing optimizations with this instruction.
+		
+			volatile uint64_t a = array[i];
+
+			
+
+			asm volatile (
+					"RDTSCP\n\t"
+					"mov %%edx, %0\n\t"
+					"mov %%eax, %1\n\t" "CPUID\n\t": "=r" (high1), "=r" (low1):: "%rax","%rbx","%rcx","%rdx");
+			start = ( ((uint64_t)high0 << 32) | low0 );
+			end = ( ((uint64_t)high1 << 32) | low1 );
+
+			raw_local_irq_restore(flags);
+			preempt_enable();
+
+			int elapsed =  end - start - overhead;
+
+                        printk(KERN_INFO "ASSOS_DATA %d",elapsed);
+	}
+
+
         
-		//Free all memory
+	//Free all memory
 	kfree(array);
         kfree(latency);
 	kfree(types);
@@ -154,7 +269,7 @@ static int __init start(void){
 
 
 static void __exit end(void){
-	printk(KERN_INFO "PROGRAM COMPLETED\n");
+	printk(KERN_INFO "PROGRAM_COMPLETED\n");
 }
 
 module_init(start);
