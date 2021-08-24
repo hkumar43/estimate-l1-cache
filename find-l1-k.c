@@ -45,7 +45,7 @@ static int __init start(void){
 	for(;i<N;i++)
 		array[i] = i;
         
-	printk(KERN_INFO "GRAPH_DATA_STARTS");
+	printk(KERN_INFO "GRAPH_DATA STARTS");
 
 	//Getting the instruction cache with the required instructions
         asm volatile (
@@ -173,11 +173,11 @@ static int __init start(void){
 
                 */
 
-		printk(KERN_INFO "ISLAND_COMPLETED");
+		printk(KERN_INFO "GRAPH_DATA ISLAND_COMPLETED");
 
 	}
 
-        printk(KERN_INFO "BLOCK_DATA_DONE");
+        printk(KERN_INFO "GRAPH_DATA BLOCK_DATA_DONE");
 
          //Fire the instruction for  clearing the caches.
         asm volatile ( "WBINVD\n\t"); 
@@ -219,7 +219,7 @@ static int __init start(void){
 	/*******************************/
 
 
-	for(i=0;i<800;i++){
+	for(i=0;i<6400;i += 8){
                         preempt_disable();
 			raw_local_irq_save(flags);
 		
@@ -254,10 +254,10 @@ static int __init start(void){
 
 			int elapsed =  end - start - overhead;
 
-                        printk(KERN_INFO "ASSOS_DATA %d",elapsed);
+                        printk(KERN_INFO "GRAPH_DATA %d",elapsed);
 	}
 
-
+	printk(KERN_INFO "GRAPH_DATA ASSOC_DATA_DONE");
         
 	//Free all memory
 	kfree(array);
@@ -269,7 +269,7 @@ static int __init start(void){
 
 
 static void __exit end(void){
-	printk(KERN_INFO "PROGRAM_COMPLETED\n");
+	printk(KERN_INFO "GRAPH_DATA PROGRAM_COMPLETED\n");
 }
 
 module_init(start);
