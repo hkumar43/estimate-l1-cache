@@ -38,13 +38,13 @@ static int __init start(void){
 	//printk(KERN_INFO "Array pointer start location : %x",array);	 
 	//printk(KERN_INFO "Remainder from 32B : %x", rem);
 	
-	//Fire the instruction for  clearing the caches.
-        asm volatile ( "WBINVD\n\t"); 
-	
 	int i = 0;
 	for(;i<N;i++)
 		array[i] = i;
         
+	//Fire the instruction for  clearing the caches.
+        asm volatile ( "WBINVD\n\t"); 
+	
 	printk(KERN_INFO "GRAPH_DATA STARTS");
 
 	//Getting the instruction cache with the required instructions
