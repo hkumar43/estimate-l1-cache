@@ -82,17 +82,24 @@ static int __init start(void){
 	//for(k=1;k<=128;k*=2){
         //printk(KERN_INFO "Skipping %d sets",k);
 
+        
 
-	int size = 1024; //in cache clocks each of size 64B
-	int sets = 1024;
-        for(;sets >= 1; sets /= 2){	
-	        int assoc = size/sets ;
-                int incr = 8*sets; 
-		printk(KERN_INFO "Check for assoc : %d", assoc);
-                
 		asm volatile ( "WBINVD\n\t" );
+	int size = 256; //in cache clocks each of size 64B
+        volatile int b;
+	for(i=0;i<=8*2*size;i+=8)
+		b = array[i];
+	
+	int sets = 1024;
+	int after_edge = 100;
+	int before_edge = 100;
+        //for(;sets >= 1; sets /= 2){	
+	        //int assoc = size/sets ;
+                //int incr = 8*sets; 
+		//printk(KERN_INFO "Check for assoc : %d", assoc);
                 
-		for(i=0;i<incr*(assoc+4);i += incr){
+                
+		 for(i=0; i<=8*2*size;i += 8){
 
 
                         
@@ -128,12 +135,13 @@ static int __init start(void){
 
                         //latency[i] = elapsed;
                         //if(elapsed > 50) printk(KERN_INFO "GRAPH_DATA HIGH");
-		       	printk(KERN_INFO "GRAPH_DATA %d : %d",i ,elapsed);
-			
+		       	//if(i < 8*(size + before_edge)) 
+				printk(KERN_INFO "GRAPH_DATA %d : %d",i ,elapsed);
+		        //if(i == 8*size) printk(KERN_INFO "GRAPH_DATA %d FILLED",size); 	
 
                 }
 
-	}
+	//}
 	//}
 
 	//printk(KERN_INFO "GRAPH_DATA ASSOC_DATA_DONE");
@@ -192,4 +200,4 @@ module_init(start);
 
 module_exit(end);
 
-
+MODULE_LICENSE("GPL");
