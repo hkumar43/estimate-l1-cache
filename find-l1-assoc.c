@@ -28,7 +28,8 @@ static int __init start(void){
 	//	array[i] = i;
         
 	printk(KERN_INFO "GRAPH_DATA STARTS");
-
+        
+	asm volatile ( "WBINVD\n\t" );
 	//Getting the  required instructions in the instruction cache.
         asm volatile (
 				"CPUID\n\t"
@@ -84,8 +85,7 @@ static int __init start(void){
 
         
 
-		asm volatile ( "WBINVD\n\t" );
-	int size = 256; //in cache clocks each of size 64B
+	int size = 16; //in cache clocks each of size 64B
         volatile int b;
 	for(i=0;i<=8*2*size;i+=8)
 		b = array[i];
