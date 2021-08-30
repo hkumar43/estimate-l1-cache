@@ -7,18 +7,12 @@
 #include <linux/slab.h>
 
 
-//Set using the data observed
-#define HIT_LATENCY_BOUND 5 
-
-#define LOG_LINE_WIDTH 10
 
 static int __init start(void){
 	unsigned high0,low0,high1,low1;
 	uint64_t start,end;
         unsigned long flags;
 
-	//This is the large array that will be used to estimate the cache  hit and miss.
-	//Assuming the largest cache tested will not exceed n integers' size.
 	uint64_t n = 200;
 	uint64_t  *array;
 

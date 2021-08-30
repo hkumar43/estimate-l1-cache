@@ -6,7 +6,6 @@
 #include <linux/sched.h>
 #include <linux/slab.h>
 
-#define NON_EVICT_LATENCY_BOUND 30 
 
 static int __init start(void){
 	unsigned high0,low0,high1,low1;
