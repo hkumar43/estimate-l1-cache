@@ -19,21 +19,16 @@ static int __init start(void){
 
 	//This is the large array that will be used to estimate the cache  hit and miss.
 	//Assuming the largest cache tested will not exceed n integers' size.
-	uint64_t N = 100000;
 	uint64_t n = 200;
 	uint64_t  *array;
 
         //printk(KERN_INFO "Creating test array\n");
 
-        array = kmalloc(N*sizeof(uint64_t),GFP_KERNEL);	
+        array = kmalloc(n*sizeof(uint64_t),GFP_KERNEL);	
 
 	
         asm volatile ( "WBINVD\n\t"); //Clear all cache 
 	
-	int i = 0;
-	volatile int b;
-	for(;i<N;i++)              //Read all elements once so that they are in L2, and the most recent ones in L1.
-		b = array[i];
         
 	
 	printk(KERN_INFO "PROGRAM_STARTS");

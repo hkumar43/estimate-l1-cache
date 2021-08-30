@@ -1,202 +1,202 @@
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222197] PROGRAM_STARTS
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222207] 60
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222210] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222212] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222214] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222216] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222218] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222220] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222222] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222223] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222225] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222228] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222229] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222231] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222233] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222235] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222237] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222239] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222241] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222243] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222245] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222247] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222249] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222250] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222252] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222254] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222256] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222258] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222260] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222262] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222264] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222266] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222267] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222269] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222271] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222274] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222275] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222277] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222279] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222281] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222283] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222284] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222286] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222288] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222290] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222292] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222294] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222296] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222297] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222299] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222301] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222304] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222305] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222307] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222309] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222311] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222313] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222314] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222316] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222319] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222321] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222323] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222324] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222326] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222328] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222330] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222332] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222334] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222336] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222338] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222339] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222341] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222343] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222345] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222347] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222349] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222351] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222353] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222354] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222356] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222358] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222360] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222362] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222364] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222366] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222368] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222369] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222371] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222373] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222375] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222377] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222379] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222381] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222383] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222384] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222386] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222388] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222390] 228
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222392] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222394] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222396] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222398] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222400] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222401] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222403] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222405] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222407] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222409] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222411] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222413] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222415] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222416] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222418] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222420] 230
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222422] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222424] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222426] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222428] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222430] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222431] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222433] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222435] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222437] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222439] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222441] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222443] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222445] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222446] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222448] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222450] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222452] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222454] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222456] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222458] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222460] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222461] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222463] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222465] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222467] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222469] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222471] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222473] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222475] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222477] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222478] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222480] 206
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222483] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222485] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222487] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222488] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222490] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222492] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222494] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222495] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222498] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222500] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222502] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222503] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222505] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222507] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222510] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222512] 14
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222514] 14
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222517] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222519] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222520] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222522] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222524] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222526] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222528] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222530] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222532] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222534] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222535] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222537] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222539] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222541] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222543] 252
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222545] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222547] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222549] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222550] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222552] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222554] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222556] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222558] 8
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222560] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222562] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222564] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222566] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222567] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222569] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222571] 0
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222573] 10
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222575] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222577] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222579] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222581] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222582] 2
-Aug 30 14:05:17 ubuntu-1 kernel: [14328.222584] 0
-Aug 30 14:05:22 ubuntu-1 kernel: [14328.222586] 0
-Aug 30 14:05:22 ubuntu-1 kernel: [14333.234099] PROGRAM_COMPLETED
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630398] PROGRAM_STARTS
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630408] 232
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630410] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630412] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630414] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630416] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630418] 10
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630420] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630422] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630424] 10
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630426] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630428] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630430] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630432] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630434] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630436] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630438] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630440] 248
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630442] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630444] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630445] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630448] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630450] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630452] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630454] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630456] 8
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630457] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630459] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630461] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630463] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630465] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630467] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630469] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630471] 216
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630473] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630475] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630476] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630479] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630481] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630483] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630485] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630487] 10
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630489] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630490] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630492] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630494] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630497] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630498] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630500] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630502] 10
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630504] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630506] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630508] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630510] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630512] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630514] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630516] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630518] 10
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630519] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630521] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630523] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630525] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630527] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630529] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630531] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630533] 10
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630535] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630537] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630538] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630540] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630543] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630545] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630546] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630548] 8
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630550] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630552] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630554] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630556] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630558] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630560] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630562] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630564] 10
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630566] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630567] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630569] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630571] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630573] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630575] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630577] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630579] 8
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630581] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630583] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630584] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630586] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630589] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630590] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630592] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630594] 6
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630596] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630598] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630600] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630602] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630604] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630606] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630608] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630610] 10
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630612] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630613] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630615] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630618] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630620] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630622] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630624] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630626] 8
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630627] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630629] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630631] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630634] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630636] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630638] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630640] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630642] 8
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630644] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630646] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630647] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630650] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630652] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630654] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630656] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630658] 10
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630660] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630662] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630664] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630666] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630668] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630670] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630672] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630674] 8
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630676] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630678] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630679] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630682] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630684] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630686] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630688] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630690] 268
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630692] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630694] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630695] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630697] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630700] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630702] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630704] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630705] 10
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630707] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630709] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630711] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630713] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630715] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630717] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630719] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630721] 8
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630723] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630725] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630726] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630729] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630731] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630733] 6
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630735] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630736] 10
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630738] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630740] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630742] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630744] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630746] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630748] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630750] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630752] 8
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630754] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630755] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630757] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630759] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630761] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630763] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630765] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630767] 10
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630769] 0
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630771] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630772] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630775] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630777] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630779] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630780] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630782] 10
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630784] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630786] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630788] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630790] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630792] 2
+Aug 30 14:37:17 ubuntu-1 kernel: [  342.630794] 2
+Aug 30 14:37:22 ubuntu-1 kernel: [  342.630796] 2
+Aug 30 14:37:22 ubuntu-1 kernel: [  347.641834] PROGRAM_COMPLETED
