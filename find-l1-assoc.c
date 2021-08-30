@@ -13,21 +13,13 @@ static int __init start(void){
 	uint64_t start,end;
         unsigned long flags;
 
-	//This is the large array that will be used to estimate the cache  hit and miss.
-	//Assuming the largest cache tested will not exceed n integers' size.
-	uint64_t N = 200000;
+	uint64_t N = 100000;
 	uint64_t  *array;
-	char *types; //Will be storing for H for Hit and M for Miss.
 
         array = kmalloc(N*sizeof(uint64_t),GFP_KERNEL);	
-        //latency = kmalloc(N*sizeof(int),GFP_KERNEL); // Data type is int because it can be negative.
-        //types = kmalloc(N*sizeof(char),GFP_KERNEL);
 
 	int i = 0;
-	//for(;i<N;i++)
-	//	array[i] = i;
         
-	printk(KERN_INFO "GRAPH_DATA STARTS");
         
 	asm volatile ( "WBINVD\n\t" );
 	//Getting the  required instructions in the instruction cache.
@@ -60,7 +52,7 @@ static int __init start(void){
 	end = ( ((uint64_t)high1 << 32) | low1 );
         /******************************/
       
-        //Find the overhead of other instructions
+        //Find the overhead of instructions
 	asm volatile (
 				"CPUID\n\t"
 				"RDTSC\n\t"
@@ -77,30 +69,20 @@ static int __init start(void){
 
         int overhead = end - start;
 
-       	
+        /*****************************/       	
        
-        //Code for finding the associativity.
-	//for(k=1;k<=128;k*=2){
-        //printk(KERN_INFO "Skipping %d sets",k);
 
         
-
-	int size = 16; //in cache clocks each of size 64B
-        volatile int b;
-	for(i=0;i<=8*2*size;i+=8)
-		b = array[i];
+        printk(KERN_INFO "PROGRAM_STARTS");
 	
-	int sets = 1024;
-	int after_edge = 100;
-	int before_edge = 100;
-        //for(;sets >= 1; sets /= 2){	
-	        //int assoc = size/sets ;
-                //int incr = 8*sets; 
-		//printk(KERN_INFO "Check for assoc : %d", assoc);
+	int sets = 16;
+	
+        for(;sets <= 512; sets *= 2){	
                 
-                
-		 for(i=0; i<=8*2*size;i += 8){
+                 asm volatile ( "WBINVD\n\t" );//clear the cache for each experiment case.
 
+                 printk(KERN_INFO "Expt. for no. of sets : %d",sets);
+		 for(i=0; i<=N;i +=8*sets){
 
                         
 			preempt_disable();
@@ -133,57 +115,15 @@ static int __init start(void){
 
 			int elapsed =  end - start - overhead;
 
-                        //latency[i] = elapsed;
-                        //if(elapsed > 50) printk(KERN_INFO "GRAPH_DATA HIGH");
-		       	//if(i < 8*(size + before_edge)) 
-				printk(KERN_INFO "GRAPH_DATA %d : %d",i ,elapsed);
-		        //if(i == 8*size) printk(KERN_INFO "GRAPH_DATA %d FILLED",size); 	
+			printk(KERN_INFO "%d",elapsed);
 
                 }
 
-	//}
-	//}
+	}
 
-	//printk(KERN_INFO "GRAPH_DATA ASSOC_DATA_DONE");
-       
-        //printk(KERN_INFO "%x %x",array,array+1);	
-       /* 
-	int j;	
-	char type = 'M';
-		uint32_t running_count = 0;
-		int blocks_count = 0;
-
-		for( j=0;j<=32000;j+=k*8){
-			char prev_type = type;
-			if(latency[j] < NON_EVICT_LATENCY_BOUND){
-			    type = 'H';
-			    if(prev_type != type){
-				    printk(KERN_INFO "%uM ",running_count);
-				    running_count = 1;
-			    }
-			    else running_count++;
-			}
-			else{
-			    type = 'M';	   
-			    //printk(KERN_INFO "Miss - %d",latency[j]);
-			    if(prev_type != type){
-				    printk(KERN_INFO "%uH ",running_count);
-				    running_count = 1;
-			    }
-			    else running_count++;
-	 
-			}
-
-                        //if(latency[j] < 100) 
-			//    blocks_count++;
-
-                        //printk(KERN_INFO "%d :  %d",latency[j],blocks_count);
+	
 
 
-		 }
-
-       		 printk(KERN_INFO "%u%c",running_count,type);	
-        }*/
 
 	//Free all memory
 	kfree(array);
@@ -193,7 +133,7 @@ static int __init start(void){
 
 
 static void __exit end(void){
-	printk(KERN_INFO "GRAPH_DATA PROGRAM_COMPLETED\n");
+	printk(KERN_INFO "PROGRAM_COMPLETED\n");
 }
 
 module_init(start);
