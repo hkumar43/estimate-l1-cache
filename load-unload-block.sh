@@ -6,4 +6,4 @@ sleep 5s
 
 sudo rmmod find_l1_k
 
-tail --lines=200 /var/log/syslog
+tail --lines=400 /var/log/syslog

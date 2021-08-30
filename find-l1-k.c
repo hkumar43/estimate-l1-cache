@@ -20,9 +20,7 @@ static int __init start(void){
 	//This is the large array that will be used to estimate the cache  hit and miss.
 	//Assuming the largest cache tested will not exceed n integers' size.
 	uint64_t N = 100000;
-	uint16_t islands = 4;
-	uint64_t dist = 8192;
-	uint64_t n = 32;
+	uint64_t n = 200;
 	uint64_t  *array;
 
         //printk(KERN_INFO "Creating test array\n");
@@ -30,14 +28,17 @@ static int __init start(void){
         array = kmalloc(N*sizeof(uint64_t),GFP_KERNEL);	
 
 	
-	int i = 0;
-        
-	//Fire the instruction for  clearing the caches.
-        asm volatile ( "WBINVD\n\t"); 
+        asm volatile ( "WBINVD\n\t"); //Clear all cache 
 	
-	printk(KERN_INFO "GRAPH_DATA STARTS");
+	int i = 0;
+	volatile int b;
+	for(;i<N;i++)              //Read all elements once so that they are in L2, and the most recent ones in L1.
+		b = array[i];
+        
+	
+	printk(KERN_INFO "PROGRAM_STARTS");
 
-	//Getting the instruction cache with the required instructions
+	//Getting the instruction cache filled with the required instructions
         asm volatile (
 				"CPUID\n\t"
 				"RDTSC\n\t"
@@ -67,7 +68,7 @@ static int __init start(void){
 	end = ( ((uint64_t)high1 << 32) | low1 );
         /******************************/
       
-        //Find the overhead of other instructions
+        //Find the overhead of instructions used to capture the latencies.
 	asm volatile (
 				"CPUID\n\t"
 				"RDTSC\n\t"
@@ -83,17 +84,15 @@ static int __init start(void){
 	end = ( ((uint64_t)high1 << 32) | low1 );
 
         int overhead = end - start;
-
+        /*********************************/
        	
        
-        // Code for determining Block Size.
+        // Code for printing the latencies for continuous reads from an array - adjacent memory locations .
 	
-	for(i=0;i<islands;i++){
 		int j=0;
 		for(;j<n;j++){
-			uint16_t index = i*dist+j;
-			preempt_disable();
-			raw_local_irq_save(flags);
+			preempt_disable();  //So that the processor can't be preempted by another process
+			raw_local_irq_save(flags);  //Disbale hard interrupts on the CPU.
 		
 		    	
 			asm volatile (
@@ -103,7 +102,7 @@ static int __init start(void){
 					"mov %%eax, %1\n\t": "=r" (high0), "=r" (low0):: "%rax","%rbx","%rcx","%rdx"
 					);
 
-			volatile uint64_t a = array[index];
+			volatile uint64_t a = array[j];   //We use volatile so that the compiler does not remove the statement.
 
 			
 
@@ -120,21 +119,10 @@ static int __init start(void){
 			int elapsed =  end - start - overhead;
 
 
-			printk(KERN_INFO "GRAPH_DATA %d",elapsed);
+			printk(KERN_INFO "%d",elapsed);
 
 		}
 
-
-		printk(KERN_INFO "GRAPH_DATA ISLAND_COMPLETED");
-
-	}
-
-        printk(KERN_INFO "GRAPH_DATA BLOCK_DATA_DONE");
-
-	
-
-
-        
 	//Free all memory
 	kfree(array);
 
@@ -143,11 +131,11 @@ static int __init start(void){
 
 
 static void __exit end(void){
-	printk(KERN_INFO "GRAPH_DATA PROGRAM_COMPLETED\n");
+	printk(KERN_INFO "PROGRAM_COMPLETED\n");
 }
 
 module_init(start);
 
 module_exit(end);
 
-
+MODULE_LICENSE("GPL");
